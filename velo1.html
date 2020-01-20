@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0">
+    <title>Vélo V</title>
+    <link rel="stylesheet" media="screen and (max-width: 1080px)" href="css/queriesTablette.css">
+    <link rel="stylesheet" href="css/carouse.css">
+    <link rel="stylesheet" href="css/canvasseul.css">
+    <link rel="stylesheet" href="css/velomap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cluster.css">
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+    <link href="fontawesome-free-5.10.1-web/css/all.css" rel="stylesheet">
+    <link href="fontawesome-free-5.10.1-web/js/all.js" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/queriesMobile.css">
+    <script src="https://unpkg.com/leaflet@1.5.0/dist/leaflet.js"></script>
+
+
+
+    <!--Inclure le fichier css leaflet dans le head du document-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+
+
+    <!--Inclure le fichier javascript après le fichier css-->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+
+    <!--Mise en place de Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body style="background-color:rgb(234, 221, 185)">
+
+
+
+
+    <!--Barre haut du site-->
+    <header class="sticky-top">
+        <div class="p-3 mb-2 bg-warning text-dark">
+            <div class="container-fluid">
+                <div class="row">
+                    <h1 class="col-md-12 d-flex justify-content-center" id="menu-header">Véli'b Lyon<i class="fas fa-bicycle"></i></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!--Création du slider d'images-->
+    <figure id="sliderImages">
+		<div class="blocImages">
+			<img id="images" src="images/map.png" alt="paris">
+        	<figcaption id="text">Choisissez la station de votre choix </figcaption>
+		</div>
+        
+
+        <div class="container-fluid" id="depart">
+            <div class="row justify-content-between">
+
+                <div class="col-4 d-flex justify-content-center">
+                    <span id="gauche"><i class="fas fa-chevron-left fa-3x"></i></span>
+                </div>
+
+                <div class="col-4 d-flex justify-content-center">
+                    <span id="droite"><i class="fas fa-chevron-right fa-3x"></i></span>
+                </div>
+
+                <div class="col-12  d-flex justify-content-center">
+                    <span id="pause"><i class="fas fa-pause fa-2x"></i></span>
+                    <span id="play"><i class="fas fa-play fa-2x"></i></span>
+                </div>
+
+            </div>
+        </div>
+    </figure>
+
+
+
+
+    <!--Carte et formulaire de reservation-->
+    <main>
+        <section id="bloc-carte-reservation">
+            <div id="mapid"></div>
+
+            <div id="detailstation">
+                <h3>Détails de la station</h3>
+                <p class="details">Status: <span id="status"></span></p>
+                <p class="details">Nom: <span id="nom"></span></p>
+                <p class="details">Adresse: <span id="adresse"></span></p>
+                <p class="details">Nombre de place(s) : <span id="place"></span></p>
+                <p class="details">Vélo(s) disponible(s) : <span id="dispo"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!--Mise en place du canvas-->
+    <section id="validation" style="display: block;">
+        <h3>Formulaire de réservation</h3>
+        <form name="general" method="POST" action="">
+            <p>
+                <label for="Nom">Nom : </label>
+                <input type="text" name="nom" id="nomformulaire" required>
+            </p>
+
+            <p>
+                <label for="prenom">Prenom : </label>
+                <input type="text" name="prenom" id="prenom" required>
+            </p>
+        </form>
+
+        <div class="block-canvas" id="myModal">
+            <canvas id="canva"></canvas>
+            <button id="valideCanva">Valider la réservation</button>
+            <button id="effaceCanva">Effacer</button>
+        </div>
+    </section>
+
+
+
+
+    <!--Affichage du timer, du nom et prenom pour la réservation-->
+    <section id="chronometre">
+        <p id="texte"></p>
+        <div id="chrono"></div>
+    </section>
+
+
+
+    <!--Pied de page-->
+    <footer>
+        <div class="container-fluid" id="piedPage">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <p>Ce site est le travail étudiant de Jean-Philippe - 2019</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <script src="js/class/timer.js"></script>
+    <script src="js/class/canvas.js"></script>
+    <script src="js/form.js"></script>
+    <script src="leaflet.markercluster.js"></script>
+    <script src="js/class/station.js"></script>
+    <script src="js/class/map.js"></script>
+    <script src="js/class/slider.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

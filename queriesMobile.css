@@ -1,0 +1,32 @@
+@media all and (max-device-width: 480px) {
+	#sliderImages{
+		width: auto;
+		height: auto;
+	}
+	#sliderImages img{
+		width: 100%;
+		height: 40%;
+	}
+
+	#detailstation{
+		width: 100%;
+	}
+
+	#mapid {
+		width: 100%;
+	}
+
+	#piedPage p {
+		font-size: 10px;
+	} 
+
+	#menu-header {
+		font-size: 35px;
+	}
+
+	#timerFinal p {
+	font-family: Ants-Valley;
+	font-size: 15px;
+	text-align: center;
+	}
+}

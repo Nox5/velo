@@ -1,0 +1,104 @@
+#myModal {
+	margin-bottom: 5em;
+}
+
+#canva{
+ 	background-color: #FFFFFF;
+	border: 2px solid #FFC107;
+	display: flex;
+	margin: auto;
+}
+
+#validation {
+	text-align: center;
+
+}
+
+p.details {
+	font-weight: bold;
+}
+
+#nom {
+	color: #FFC107;
+}
+
+#adresse {
+	color: #FFC107;
+}
+
+#place{
+	color: #FFC107;
+}
+
+#dispo {
+	color: #FFC107;
+}
+
+#lesBoutons {
+	display: flex;
+	justify-content: center;
+}
+
+label {
+	width: 100px;
+	display: block;
+}
+
+#para{
+	color: white;
+	font-style: italic;
+}
+
+.block-canvas h2 {
+	color: #FFFFFF;
+	padding-top: 20px;
+	text-align: center;
+}
+
+
+#controls {
+	text-align: center;
+	margin: 10px;
+}
+
+#valideCanva {
+	font-size: 18px;
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+    border: 2px solid #FFC107;
+    cursor: pointer;
+	outline: none;
+}
+
+#valideCanva:hover {
+	background-color: #FFC107;
+	border: 2px solid #FFFFFF;
+}
+
+#effaceCanva {
+	font-size: 18px;
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+    border: 2px solid #FFC107;
+    cursor: pointer;
+    outline: none;
+}
+
+#effaceCanva:hover {
+	background-color: #FFC107;
+	border: 2px solid #FFFFFF;
+}
+
+#annuler {
+	font-size: 18px;
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+    border: 2px solid #FFC107;
+    cursor: pointer;
+    outline: none;
+}
+
+#annuler:hover {
+	background-color: #FFC107;
+	border: 2px solid #FFFFFF;
+}

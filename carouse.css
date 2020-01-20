@@ -1,0 +1,63 @@
+#sliderImages {
+	height: auto;
+	max-width: auto;
+	margin: 0 auto;
+	
+}
+
+#sliderImages img{
+	width: 50vw;
+	height: 50vh;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+
+#text{
+	display: block;
+	text-align: center;
+	color: #343A40;
+	font-family: 'Adventure-Hollow', Arial, serif;
+	font-size: 25px; 
+}
+
+.fa-chevron-left {
+	text-shadow: 0 0 3px #000;
+}
+
+.fa-chevron-right {
+	text-shadow: 0 0 3px #000;
+}
+
+.fa-chevron-left:hover{
+	color: #FFC107;
+}
+
+.fa-chevron-right:hover{
+	color: #FFC107;
+}
+
+.fa-pause{
+	padding-right: 15px;
+	text-shadow: 0 0 3px #000;
+}
+
+.fa-pause:hover{
+	color: #FFC107;
+}
+
+.fa-play {
+	text-shadow: 0 0 3px #000;
+}
+
+.fa-play:hover{
+	color: #FFC107;
+}
+
+
+@font-face {
+	font-family: 'Adventure-Hollow';
+	src: url(Adventure-Hollow.otf);
+	src: url(Adventure.otf);
+}	

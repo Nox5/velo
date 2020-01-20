@@ -1,0 +1,117 @@
+#sliderImages {
+	margin-top: 3em;
+	
+}
+
+#bloc-carte-reservation {
+	display: flex;
+	margin-bottom: 5em;
+	margin-top: 5em;
+}
+
+#detailstation {
+	display: block;
+	width: 100%;
+	background-color: #3498db;
+	text-align: center;
+	font-family: helvetica;
+}
+
+#mapid {
+	width: 100%;
+	border: 3px solid black;
+}
+
+
+#detailstation .paragraphe{
+	font-size: 15px;
+	color: #FFFFFF;
+}
+
+#detailstation h3{
+	color: #FFFFFF;
+	margin: 10px;
+}
+
+#texteReservation {
+	font-weight: bold;
+	color: #4cd137;
+}
+
+#piedPage {
+	background-color: #FFC107;
+	padding-top: 20px;
+}
+
+#piedPage p {
+	font-weight: bold;
+	color: #343A40;
+}
+
+#reser {
+	font-size: 18px;
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+    border: 2px solid #FFC107;
+    cursor: pointer;
+	outline: none;
+}
+
+#annulation {
+	font-size: 18px;
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+    border: 2px solid #FFC107;
+    cursor: pointer;
+    outline: none;
+    margin: 10px;
+}
+
+#reser:hover {
+	background-color: #FFC107;
+	border: 2px solid #FFFFFF;
+}
+
+#annulation:hover {
+	background-color: #FFC107;
+	border: 2px solid #FFFFFF;
+}
+
+.fa-bicycle{
+	margin-left: 5px;
+}
+
+#chronometre {
+	margin-right: 25%;
+	margin-left: 25%;
+	margin-bottom: 2em;
+}
+
+#chrono {
+	text-align: center;
+	font-weight: bold;
+}
+
+#texte {
+	color: #FFC107;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+@font-face {
+	font-family: 'Adventure-Hollow';
+	src: url(Adventure-Hollow.otf);
+	src: url(Adventure.otf);
+}	
+
+@font-face {
+	font-family: 'deuxieme_Rang';
+	src: url(Deuxieme_Rang.otf);
+	src: url(Deuxieme_Rang_Original.otf);
+}
+
+#menu-header{
+	font-family: 'Adventure-Hollow', Arial, serif;
+	cursor: default;
+}
